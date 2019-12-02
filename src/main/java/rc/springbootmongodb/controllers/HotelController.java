@@ -16,13 +16,14 @@ import java.util.Optional;
 @RequestMapping("/hotels")
 public class HotelController {
 
-    private HotelService hotelService;
+    private final HotelService hotelService;
 
     @Autowired
     public HotelController(HotelService hotelService) {
         this.hotelService = hotelService;
     }
 
+    @GetMapping("/all")
     public ResponseEntity<List<Hotel>> getAll(){
         List<Hotel> hotelList = hotelService.getAllHotel();
 

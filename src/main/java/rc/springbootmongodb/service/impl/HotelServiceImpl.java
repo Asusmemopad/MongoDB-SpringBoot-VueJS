@@ -1,15 +1,22 @@
 package rc.springbootmongodb.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import rc.springbootmongodb.model.Hotel;
 import rc.springbootmongodb.repository.HotelRepository;
 import rc.springbootmongodb.service.HotelService;
 
 import java.util.List;
 
+@Service
 public class HotelServiceImpl implements HotelService {
+
+    private final HotelRepository hotelRepository;
+
     @Autowired
-    private HotelRepository hotelRepository;
+    public HotelServiceImpl(HotelRepository hotelRepository) {
+        this.hotelRepository = hotelRepository;
+    }
 
     @Override
     public List<Hotel> getAllHotel() {
@@ -22,12 +29,12 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public Hotel save(Hotel hotel) {
+    public Hotel saveHotel(Hotel hotel) {
         return null;
     }
 
     @Override
-    public Hotel update(Hotel hotel) {
+    public Hotel updateHotel(Hotel hotel) {
         return null;
     }
 

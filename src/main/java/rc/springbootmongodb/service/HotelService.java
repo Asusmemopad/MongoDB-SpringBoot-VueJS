@@ -6,11 +6,11 @@ import rc.springbootmongodb.model.Hotel;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public interface HotelService {
     List<Hotel> getAllHotel();
     Hotel getHotel(String hotelId);
-    Hotel save(Hotel hotel);
-    Hotel update(Hotel hotel);
+    Hotel saveHotel(Hotel hotel);
+    Hotel updateHotel(Hotel hotel);
     void deleteHotel(String hotelId);
 }
