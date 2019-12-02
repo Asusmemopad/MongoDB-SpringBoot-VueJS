@@ -33,4 +33,15 @@ public class HotelController {
 
         return new ResponseEntity<>(hotelList,HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Hotel> getHotel(@PathVariable("id") String id){
+        Hotel hotel = hotelService.getHotel(id);
+
+        if (hotel == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(hotel,HttpStatus.OK);
+    }
 }
