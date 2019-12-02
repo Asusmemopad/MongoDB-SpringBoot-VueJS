@@ -23,7 +23,7 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/")
     public ResponseEntity<List<Hotel>> getAll(){
         List<Hotel> hotelList = hotelService.getAllHotel();
 
