@@ -23,7 +23,7 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Hotel>> getAll(){
         List<Hotel> hotelList = hotelService.getAllHotel();
 
@@ -43,5 +43,12 @@ public class HotelController {
         }
 
         return new ResponseEntity<>(hotel,HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Hotel> saveHotel(@RequestBody Hotel hotel){
+        System.out.println("hotel = " + hotel);
+        hotelService.saveHotel(hotel);
+        return new ResponseEntity<>(hotel, HttpStatus.CREATED);
     }
 }
